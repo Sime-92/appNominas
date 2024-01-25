@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula tu nómina</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Calcula tu nómina</h2>
+        <form id="calculaNominaForm">
+            <!-- Categoría -->
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select class="form-control" id="categoria">
+                    <option value="limpiador">Limpiador</option>
+                    <!-- Más opciones se añadirán aquí -->
+                </select>
+            </div>
+
+             <!-- Jornada -->
+    <div class="form-group">
+        <label for="jornada">Jornada (horas semanales):</label>
+        <select class="form-control" id="jornada"></select>
+    </div>
+
+
+
+           <!-- Trienios -->
+           <div class="form-group">
+            <label for="trienios">Trienios:</label>
+            <input type="range" class="form-control-range" id="trienios" min="0" max="10" value="0">
+            <span id="trieniosValor">0</span> <!-- Para mostrar el valor actual del range -->
+        </div>
+
+
+            <!-- Pluses -->
+            <div class="form-group">
+                <label for="pluses">Pluses:</label>
+                <input type="number" class="form-control" id="pluses" step="0.01">
+            </div>
+
+            <!-- Festivos -->
+            <div class="form-group">
+                <label for="festivos">Festivos:</label>
+                <select class="form-control" id="festivos">
+                    <!-- Opciones de 1 a 5 -->
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
+                        <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
+
+            <!-- Días Trabajados -->
+            <div class="form-group">
+                <label for="diasTrabajados">Días Trabajados:</label>
+                <input type="number" class="form-control" id="diasTrabajados" max="30">
+            </div>
+
+        <!-- Baja?-->
+<div class="form-group">
+    <label>¿Has estado de baja?</label>
+    <div>
+        <input type="radio" id="bajaSi" name="bajaLaboral" value="si">
+        <label for="bajaSi">Sí</label>
+    </div>
+    <div>
+        <input type="radio" id="bajaNo" name="bajaLaboral" value="no" checked>
+        <label for="bajaNo">No</label>
+    </div>
+</div>
+
+<!-- Detalles de Baja Laboral, ocultos inicialmente -->
+<div id="detallesBajaLaboral" style="display: none;">
+    <!-- Baja Laboral o Común -->
+    <div class="form-group">
+        <label for="tipoBaja">Tipo de Baja:</label>
+        <select class="form-control" id="tipoBaja">
+            <option value="laboral">Laboral</option>
+            <option value="comun">Común</option>
+        </select>
+    </div>
+
+    <!-- Primera Baja del Año -->
+    <div class="form-group">
+        <label>¿Es la primera baja del año?</label>
+        <div>
+            <input type="radio" id="primeraBajaSi" name="primeraBaja" value="si">
+            <label for="primeraBajaSi">Sí</label>
+        </div>
+        <div>
+            <input type="radio" id="primeraBajaNo" name="primeraBaja" value="no">
+            <label for="primeraBajaNo">No</label>
+        </div>
+    </div>
+
+    <!-- Días de Baja -->
+    <div class="form-group">
+        <label for="diasBaja">Días de Baja:</label>
+        <input type="number" class="form-control" id="diasBaja">
+    </div>
+</div>
+  <!-- Fin de Baja-->
+
+            <!-- Pagas Prorrateadas -->
+            <div class="form-group">
+                <label>Pagas Prorrateadas:</label>
+                <div>
+                    <input type="radio" id="pagasSi" name="pagasProrrateadas" value="si">
+                    <label for="pagasSi">Sí</label>
+                </div>
+                <div>
+                    <input type="radio" id="pagasNo" name="pagasProrrateadas" value="no" checked>
+                    <label for="pagasNo">No</label>
+                </div>
+            </div>
+
+            <!-- IRPF -->
+            <div class="form-group">
+                <label for="irpf">IRPF (%):</label>
+                <input type="number" class="form-control" id="irpf">
+            </div>
+
+            <!-- Botones -->
+            <button type="submit" class="btn btn-primary">Calcular</button>
+            <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+        </form>
+    </div>
+   
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="Js/baja1.js"></script>
+    <script src="Js/seleccionJornadaAjax.js"></script>
+    <script src="Js/calcularTrienio.js"></script>
+    
+</body>
+</html>

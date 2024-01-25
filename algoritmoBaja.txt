@@ -1,0 +1,34 @@
+Entendido, vamos a elaborar un algoritmo para calcular la baja, basándonos en la información proporcionada del convenio y del estatuto. Aquí tienes los conceptos clave y cómo podrían implementarse en el algoritmo:
+
+### Algoritmo para Calcular la Baja
+
+1. **Determinar el Tipo de Baja:**
+   - **Baja Laboral (Accidente Laboral):** Completar hasta el 100% del salario real durante un máximo de seis meses.
+   - **Baja por Enfermedad Común o Accidente No Laboral:**
+     - Si conlleva hospitalización o inmovilización, completar la prestación hasta el 100% del salario real mientras dure esta situación.
+     - Si es la primera baja del año por enfermedad común o accidente no laboral: 
+       - Pagar el 50% del salario real durante los tres primeros días.
+     - Si no es la primera baja del año:
+       - No pagar los tres primeros días.
+
+2. **Cálculo de la Prestación según el Estatuto:**
+   - **Enfermedad Común y Accidente No Laboral:**
+     - Pagar el 60% de la base reguladora desde el 4º día hasta el 20º día.
+     - Pagar el 75% de la base reguladora a partir del día 21.
+   - **Enfermedad Profesional o Accidente de Trabajo:**
+     - Pagar el 75% de la base reguladora.
+
+### Implementación del Algoritmo
+
+- El formulario debe incluir una sección para que el usuario indique si ha estado de baja y, de ser así, el tipo de baja.
+- En función del tipo de baja seleccionado, el algoritmo aplicará las reglas correspondientes.
+- Para bajas por enfermedad común o accidente no laboral, se debe considerar si es la primera del año o no.
+- El cálculo de la prestación se hará en base a la duración de la baja y las reglas específicas de cada tipo de baja.
+
+### Consideraciones Adicionales
+
+- **Validaciones:** Asegúrate de que la información ingresada por el usuario sea válida y coherente con los requisitos del convenio y el estatuto.
+- **Flexibilidad en el Cálculo:** El algoritmo debe ser flexible para manejar diferentes escenarios de baja.
+- **Actualización de Datos:** Dado que las regulaciones pueden cambiar, el sistema debe permitir actualizar fácilmente estos parámetros.
+
+Este algoritmo, al ser implementado correctamente, te permitirá calcular de manera precisa las prestaciones en caso de baja, ajustándose a las normativas específicas del convenio y del estatuto laboral.

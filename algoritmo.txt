@@ -1,0 +1,57 @@
+Genial, vamos adelante con los requisitos funcinales punto 1: El usuario para calcular su nómina introducirá los siguientes datos en el formulario: 1- Categoría (en este caso solo vamos a poner limpiador, más adelante iremos escalando y abarcando todas las categorías del convenio y si funciona bien otros convenios). La jornada, esta es la selección más importante porque casi todo depende de aquí, mi idea es conectar este formulario con mi base de datos, y que el usuario pueda elegir los valores que tendré en mi bbdd del 1 al 39 (horas semanales) . Siguiente elemento: Trienios , el usuario podrá seleccionar hasta 10, el precio del trienio, va en función de la jornada, así que en la base de datos tendremos establecido el precio del trienio para todas las posibles jornadas del trabajador, así que solo habría que enlazarlo a la bbdd multiplicarlo por lo que haya seleccionado el usuario. Luego otro apartado importante: Pluses, aquí, lo abarca todo (nocturnidad, festivo no disfrutado, plus adicional, dietas..) más adelante miraremos como mejorar este punto, pero en el formulario actual, es un input de un float, 2 decimales.  Otro desplegable con la selección de 'festivos' donde el usuario podrá seleccionar de 1 a 5. Lo mismo, el precio del festivo va ligado a la jornada, por lo que en la bbdd también estará incluido el festivo para todas las jornadas. Otra casilla de días trabajados, que por defecto y como máximo sea 30; si el usuario ha estado de baja tiene que cuadrar con otro input que habrá en el apartado de baja; es decir si he trabajado 14 días, en el apartado de baja tiene que ser 16, tienen que sumar 30 entre los 2. Esto con Js en la validación se puede controlar. Ok vamos con el apartado de baja , hay una pregunta de sí o no, ¿Has estado de baja?  si usuario responde NO, es sencillo , si responde SÍ , hay que preguntarle si es laboral , si la respuesta es Sí, la baja laboral casi cobra el 100% pero tiene otro cálculo. si la baja no es laboral que es enfermedad común, hay que preguntar si es la primera del año, si es la 1ª , los 3 primeros días la empresa le paga el 50% del salario, si no es la 1ª, no cobra los 3 primeros días. Por fin salimos del apartado de las bajas, una pregunta a elegir si el usuario tiene las pagas prorrateadas sí o no. por último, que introduzca del 0 al 20%, el % de IRPF que le suelen quitar. Para finalizar un botón de CALCULAR bien bonito y otro de limpiar formulario (tal vez) . Qué te parece el algoritmo? 
+
+
+
+
+
+
+
+Tu propuesta para el algoritmo de la aplicación de cálculo de nóminas parece bien pensada y detallada. Aquí te ofrezco un desglose y algunos comentarios sobre cada elemento que has mencionado:
+
+### Elementos del Formulario
+
+1. **Categoría:**
+   - Inicialmente limitada a 'limpiador'. Buena estrategia para empezar simple y luego expandirse.
+
+2. **Jornada (horas semanales):**
+   - Conexión directa con la base de datos para elegir entre 1 y 39 horas. Esencial para determinar el salario base y otros cálculos.
+
+3. **Trienios:**
+   - Selección hasta 10. El precio del trienio depende de la jornada y se calculará multiplicando el valor de la base de datos por la cantidad seleccionada.
+
+4. **Pluses:**
+   - Input para introducir un valor flotante con 2 decimales. En futuras iteraciones se podría detallar más este apartado.
+
+5. **Festivos:**
+   - Desplegable para seleccionar de 1 a 5 festivos. El costo se determina según la jornada laboral.
+
+6. **Días Trabajados:**
+   - Casilla con un máximo de 30 días. Importante para ajustar los cálculos en casos de bajas.
+
+7. **Baja Laboral:**
+   - Pregunta de sí/no sobre baja laboral. Si es afirmativo, se debe especificar si es laboral o común y realizar cálculos específicos en cada caso.
+
+8. **Pagas Prorrateadas:**
+   - Opción de sí/no. Afectará el cálculo final del salario.
+
+9. **IRPF:**
+   - Introducción de un porcentaje para calcular la retención de IRPF.
+
+10. **Botones de 'Calcular' y 'Limpiar Formulario':**
+    - Esenciales para la interacción del usuario con la aplicación.
+
+### Comentarios y Sugerencias
+
+- **Validación de Datos:** Implementa validaciones robustas en JavaScript para garantizar que los datos ingresados sean coherentes. Por ejemplo, asegurarte de que los días trabajados y de baja sumen 30.
+  
+- **Cálculos Complejos:** Dado que algunos cálculos dependen de múltiples factores (como las bajas laborales), asegúrate de diseñar algoritmos que sean precisos y reflejen las normativas laborales correspondientes.
+
+- **Usabilidad y Diseño:** Mantén la interfaz amigable y simple. Usa mensajes claros y tooltips para guiar al usuario a través del formulario.
+
+- **Pruebas Rigurosas:** Dada la complejidad de las variables, es crucial realizar pruebas exhaustivas para garantizar la precisión en todos los escenarios posibles.
+
+- **Escalabilidad:** Planifica cómo la aplicación podrá incorporar más categorías y convenios en el futuro.
+
+- **Integración de la Base de Datos:** Asegúrate de que la integración de la base de datos con el formulario sea fluida y segura, especialmente en lo que respecta a la carga de datos dinámicos como las horas de jornada y los precios de los trienios.
+
+En resumen, el algoritmo que has descrito es un buen punto de partida. Es claro, lógico y parece abarcar todos los aspectos clave del cálculo de nóminas en el sector de limpieza. La clave del éxito será en la precisión de los cálculos y la facilidad de uso de la interfaz.
