@@ -136,6 +136,12 @@
     <script src="Js/baja1.js"></script>
     <script src="Js/seleccionJornadaAjax.js"></script>
     <script src="Js/calcularTrienio.js"></script>
+    <script>
+    document.getElementById('trienios').oninput = function() {
+        var value = (this.value-this.min)/(this.max-this.min)*100;
+        this.style.background = 'linear-gradient(to right, red 0%, red ' + value + '%, #ccc ' + value + '%, #ccc 100%)';
+    };</script>
+    
     
 </body>
 </html>

@@ -7,4 +7,14 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+.form-control{
+    width: 50% !important;
+}
+/* Estilo para el input tipo range */
+input[type=range] {
+    width: 50%; 
+    height: auto;
+   
 }
